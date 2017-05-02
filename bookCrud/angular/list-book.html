@@ -1,0 +1,33 @@
+<header>
+    <h1>Livros registrados</h1>
+</header>
+<section>
+    <fieldset>
+        <legend>Livros</legend>
+        <table ng-init="listBook()" class="table table-striped table-bordered">
+            <tbody>
+                <tr>
+                    <th>Titulo</th>
+                    <th>Autor</th>
+                    <th>Gênero</th>
+                    <th>Editora</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+                </tr>
+                <tr ng-repeat="b in registeredBooks">
+                    <td>{{b.titulo}}</td>
+                    <td>{{b.autor}}</td>
+                    <td>{{b.genero}}</td>
+                    <td>{{b.editora}}</td>
+                    <td><a style="cursor:pointer" href="#create/{{b._id}}" ng-click="bookId(b)">Editar</a></td>
+                    <td><a href="" ng-click="deleteBook(b)">Deletar</a></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr ng-show="deleted == true">
+                    <td colspan="6" style="color: red; background-color: darkgray;" red;>{{message}}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </fieldset>
+</section>

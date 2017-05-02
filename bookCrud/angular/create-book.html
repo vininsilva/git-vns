@@ -1,0 +1,37 @@
+<header>
+    <h1>Cadastro de Livro</h1>
+</header>
+<section>
+    <fieldset>
+        <legend>Livro</legend>
+        <form class="form-group col-md-5">
+            <div class="form-group">
+                <label>Titulo:</label>
+                <input class="form-control" type="text" ng-model="book.titulo" />
+            </div>
+            <div class="form-group">
+                <label>Autor:</label>
+                <input type="text" class="form-control" ng-model="book.autor" />
+            </div>
+            <div class="form-group">
+                <label>Gênero:</label>
+                <input type="text" class="form-control" ng-model="book.genero" />
+            </div>
+            <div class="form-group">
+                <label>Editora:</label>
+                <input type="text" class="form-control" ng-model="book.editora" />
+            </div>
+            <button ng-click="saveBook(book)" type="submit" class="btn btn-danger">Salvar</button>
+
+            <p><label>
+        <div class="alert alert-success" role="alert" ng-show="response == true">
+                <strong>OK</strong> Livro salvo com sucesso!
+        </div>
+        <div class="alert alert-danger" role="alert" ng-show="response == false">
+             <strong>Erro</strong> Erro ao salvar o livro!
+        </div>
+        </form>
+    </fieldset>
+</section>
+<footer>
+</footer>
